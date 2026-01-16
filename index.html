@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enterprise Timetable Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="logo">📊 TimetablePro</div>
+    <div class="user">Admin ▼</div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li onclick="showSection('dashboard')">🏠 Dashboard</li>
+      <li onclick="showSection('generate')">📅 Generate Timetable</li>
+      <li onclick="showSection('teachers')">👨‍🏫 Teachers</li>
+      <li onclick="showSection('classes')">🏫 Classes</li>
+      <li onclick="showSection('export')">📂 Export</li>
+      <li onclick="toggleTheme()">🌗 Toggle Theme</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Dashboard -->
+    <section id="dashboard" class="section active">
+      <h1>Enterprise Timetable Manager</h1>
+      <p>Manage multiple classes, teachers, and schedules with ease.</p>
+    </section>
+
+    <!-- Generate Timetable -->
+    <section id="generate" class="section">
+      <h2>Generate Timetable</h2>
+      <form id="timetableForm">
+        <label>Class Section: <input type="text" id="classSection" placeholder="10A"></label><br>
+        <label>Subjects: <input type="text" id="subjects" placeholder="Math, Science, English"></label><br>
+        <label>Teachers: <input type="text" id="teachers" placeholder="Mr. A, Ms. B"></label><br>
+        <label>Days: <input type="number" id="days" value="5"></label><br>
+        <label>Periods: <input type="number" id="periods" value="6"></label><br>
+        <button type="button" onclick="generateTimetable()">Generate</button>
+      </form>
+      <div id="output"></div>
+    </section>
+
+    <!-- Teachers -->
+    <section id="teachers" class="section">
+      <h2>Teacher Management</h2>
+      <p>Add, edit, and manage teacher availability here.</p>
+    </section>
+
+    <!-- Classes -->
+    <section id="classes" class="section">
+      <h2>Class Management</h2>
+      <p>Manage multiple class sections and their timetables.</p>
+    </section>
+
+    <!-- Export -->
+    <section id="export" class="section">
+      <h2>Export Options</h2>
+      <button onclick="exportPDF()">Export as PDF</button>
+      <button onclick="exportExcel()">Export as Excel</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
